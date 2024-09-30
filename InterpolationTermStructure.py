@@ -292,12 +292,12 @@ class InterpolationTermStructure(YieldCurveScraper):
         #
         return self._nelson_siegel_svensson
 
-p = InterpolationTermStructure('US','23-08-2024','nelson_siegel_svensson')
-p.compute()
-print(p.nelson_siegel_svensson)
-import matplotlib.pyplot as plt
-plt.plot(p.nelson_siegel_svensson.iloc[:,1],p.nelson_siegel_svensson.iloc[:,0])
-plt.show()
+# p = InterpolationTermStructure('US','23-08-2024','nelson_siegel_svensson')
+# p.compute()
+# print(p.nelson_siegel_svensson)
+# import matplotlib.pyplot as plt
+# plt.plot(p.nelson_siegel_svensson.iloc[:,1],p.nelson_siegel_svensson.iloc[:,0])
+# plt.show()
 
 """
 bootsrapping","linear_interpolation","cubic_interpolation","nelson_siegel","nelson_siegel_svensson
