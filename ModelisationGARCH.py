@@ -180,37 +180,13 @@ class ModelisationGARCH(ModelingDataScraper):
 
 
     
-b = 'BR'
-p = ModelisationGARCH(b, '01-01-2000','25-08-2024','simulation')
-p.compute()
-df = p.vas_garch_monte_carlo_simulation(300)
-print(df)
+# b = 'BR'
+# p = ModelisationGARCH(b, '01-01-2000','25-08-2024','simulation')
+# p.compute()
+# df = p.vas_garch_monte_carlo_simulation(300)
+# print(df)
 
-plt.plot(pd.to_datetime(p.model_data.index[4000:]),p.model_data.iloc[4000:,1])
-plt.plot(p.vas_garch_monte_carlo_expected.index,p.vas_garch_monte_carlo_expected)
-for comp, i in enumerate(df.columns):
-    plt.plot(df.index, df.iloc[:, comp])
-"""
-b = 'MA'            
-d = ModelisationGARCH(b, '01-01-2013','01-01-2023')
-#f = ModelisationAR(b, '01-01-2013','01-01-2023')
-l= np.array(d.CIR())
-l1 = np.array(d.VASICEK())
-#L,a = f.VASICEK('MLE')
-#L1,a1 = f.CIR('MLE')
-K = np.array(l+l1)/2#np.array(L[1:])+np.array(L1[1:])+
-
-
-x = np.arange(0,len(d.data.index))
-#plt.plot(x[1:],K,c = 'pink',label='mean of the four '+d.CC)
-#plt.plot(x[1:],l,c = 'green',label='CIR GARCH '+d.CC)
-plt.plot(x[1:],l1,c = 'yellow',label='VASICEK GARCH '+d.CC)
-#plt.plot(x,L,c = 'red',label='Vasicek MLE '+d.CC)
-#plt.plot(x,L1,c = 'purple',label='CIR MLE '+d.CC)
-plt.plot(x,d.data.iloc[:,-1],c = 'black',label='Real Data of '+d.CC)
-plt.title('modeling short interest rate for '+d.CC)
-plt.legend()
-plt.tick_params(axis='x',which='both', bottom=False,  top=False, labelbottom=False)
-plt.xticks(ticks=None,rotation=45)
-plt.show()
-"""
+# plt.plot(pd.to_datetime(p.model_data.index[4000:]),p.model_data.iloc[4000:,1])
+# plt.plot(p.vas_garch_monte_carlo_expected.index,p.vas_garch_monte_carlo_expected)
+# for comp, i in enumerate(df.columns):
+#     plt.plot(df.index, df.iloc[:, comp])
